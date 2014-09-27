@@ -1,12 +1,11 @@
 /***************************************************************
-* Author:      Kabir Singh
-* Date:        27 September 2014
-* Description: Driving javascript module to manage interactive 
-*               content in mobile Taboo app 
-*****************************************************************/
+/* Author:  Kabir Singh
+/* Date:    27 September 2014
+/* Description: Driving javascript module to manage interactive 
+                content in mobile Taboo app 
+/****************************************************************
 
-    /* embedded JSON data*/
-    /* TODO figure out how to pull a JSON file to allow future dynamic, crowd-source cards */
+
     var taboo_words = '{"words":[' +
           '{"guess":"cat","fail1":"kitten","fail2":"feline","fail3":"pet","fail4":"meow" },' +
           '{"guess":"pirate","fail1":"treasure","fail2":"hook","fail4":"parrot","fail4":"booty" },' +
@@ -26,7 +25,6 @@
           '{"guess":"dog","fail1":"bark","fail2":"furry","fail3":"pet","fail4":"best friend" },' +
           '{"guess":"bird","fail1":"fly","fail2":"feather","fail3":"pet","fail4":"chirp" }]}';
 
-    /* game manager obj -- in charge of overarching global variables throughout session of game */
     function Game_Manager(input_num) {
         this.num_players = input_num;
         this.scores = [0, 0];
@@ -97,17 +95,16 @@
                 game_manager.round_time--;
                 /* formatting */
                 document.body.innerHTML = game_manager.round_time;
-                /* i think this where you would do:
-                 * start_speech_recognition(game_manager) */
             }
         }
 
         if(game_manager.round_time == -1) {
             /* THIS IS WHERE YOU DISABLE SHIT AND END THE ROUND */
         }
+            
+
+        
     }
-
-
     /*******************************************************/
     /*                 HELPER FUNCTIONS                    */
     /*******************************************************/
