@@ -5,13 +5,7 @@
  */
 var init = function () {
     
-    var b1= document.getElementById("buttonone");
-    b1.addEventListener("touchstart", touchstarthandler,false);
-    b1.addEventListener("touchend", touchendhandler,false);
-
-    var b2= document.getElementById("buttontwo");
-    b2.addEventListener("touchstart", touchstarthandler, false);
-    b2.addEventListener("touchend", touchendhandler, false);
+    
 };
 
 window.addEventListener("load", init, false);  

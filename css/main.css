@@ -1,3 +1,5 @@
+
+
 /******************GLOBAL**************************/
 @-ms-viewport {
     width: device-width;
@@ -8,6 +10,29 @@ html {
 	overflow-x:hidden;
 	font-family:Helvetica, Arial, sans-serif; 
 	-webkit-text-size-adjust:100%; 
+}
+
+#StartScreen {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#InstructionsButton {
+    position: fixed;
+    bottom: 5%;
+    left: 10%;
+}
+
+#SettingsButton {
+    position: fixed;
+    bottom: 5%;
+    right: 10%;
+}
+
+.odometer {
+    font-size: 100px;
 }
 
 * { 
@@ -25,7 +50,9 @@ body {
 	width:100%;	height:100%;
     overflow:hidden;
     -webkit-user-select:none;
+    background-color: #F8F8F8;
 }
+
 
 input,textarea
 {
@@ -46,16 +73,9 @@ a:focus, a:active, a:hover { outline:0; }
 
 
 /******************* SMARTPHONE [DEFAULT STYLES] **************************/
-.masthead {
-	background-color:white;
-    height:50px;
-}
-
-.logo {
-    background-color:white;
-    content:url("../images/logo.png"); 
-    float:left;
-    margin:10px;
+#fn {
+    font-size:36px;
+    font-family: 'Just Another Hand', cursive;
 }
 
 .content {

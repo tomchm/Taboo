@@ -18,47 +18,73 @@
         <title>Responsive Button</title>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        
+        <!-- CSS -->
         <link href="css/main.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/odometer.css" />
         <link href='http://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
-        <script src="intelxdk.js"></script>
-  <script src='cordova.js'></script> 
-  <script src='xhr.js'></script>
+        
+        <!-- JS -->
+        <script src="js/thirdparty/jquery-1.11.1.min.js"></script>
+        <script src="http://github.hubspot.com/odometer/odometer.js"></script>
         <script src="js/main.js" type="text/javascript"></script>
         <script src="js/game.js" type="text/javascript"></script>
+        <script src="js/count.js" type="text/javascript"></script>
+        
+        
     </head>
     
     <body>
         
-      <div id="StartScreen">
+        <!-- START SCREEN -->
+        <div id="StartScreen">
         ** Taboo icon ** <br></br>
-        <div id="fn">Enter number of players: <input type="text" value="4"><br></div>
-        
-        <div id="InstructionsButton"><div id="fn">Instructions</div></div>
-        <div id="Start"><div id="fn">Start</div></div>
-        
-        <a href="#" onclick="return show('InstructionsScreen','StartScreen');">INSTRUCTIONS</a>
-        <a href="#" onclick="return show('ReadyScreen','StartScreen');">START</a>
-      </div>
+            <div id="fn">Enter number of players: <input type="text" value="4"><br></div>
+            <div id="Start" onclick="return show('CounterScreen','StartScreen');">
+                <div id="fn">Start</div>
+            </div>
+            <div id="InstructionsButton" onclick="return show('InstructionsScreen','StartScreen');">
+                <div id="fn">Instructions</div>
+            </div>
+            <div id="SettingsButton" onclick="return show('SettingsScreen','StartScreen');">
+                <div id="fn">Settings</div>
+            </div>
+        </div>
+        <!-- END START SCREEN -->
     
+        <!--  INSTRUCTIONS SCREEN -->
         <div id="InstructionsScreen" style="display:none">
-        <div id="fn">INSTRUCTIONS</div>
-        <a href="#" onclick="return show('StartScreen','InstructionsScreen');">BUTTON HERE</a>
-      </div>
-
-      <div id="ReadyScreen" style="display:none">
-          <div id="fn">3 2 1</div>
-        <a href="#" onclick="return show('GameScreen','ReadyScreen');">BUTTON HERE</a>
-      </div>
-
-      <div id="GameScreen" style="display:none">
-        GAME
-        <a href="#" onclick="return show('ScoreScreen','GameScreen');">Game end?</a>
-      </div>
+            <div id="fn">INSTRUCTIONS</div>
+            <a href="#" onclick="return show('StartScreen','InstructionsScreen');">BUTTON HERE</a>
+        </div>
+        <!-- END INSTRUCTIONS SCREEN -->
     
-    <div id="ScoreScreen" style="display:none">
-        FINAL SCORE
-        <div id="startButton">Start screen</div>
-      </div>
-        
+        <!--  SETTINGS SCREEN -->
+        <div id="SettingsScreen" style="display:none">
+            <div id="fn">SETTINGS</div>
+            <a href="#" onclick="return show('StartScreen','SettingsScreen');">BUTTON HERE</a>
+        </div>
+        <!-- END SETTINGS SCREEN -->
+    
+        <!--  COUNTER SCREEN -->
+        <div id="CounterScreen" style="display:none">
+          <div id="odometer" class="odometer">3</div>
+        </div>
+        <!-- END COUNTER SCREEN -->
+    
+        <!--  GAME SCREEN -->
+        <div id="GameScreen" style="display:none">
+            GAME
+            <a href="#" onclick="return show('ScoreScreen','GameScreen');">Game end?</a>
+        </div>
+        <!-- END GAME SCREEN -->
+    
+        <!--  SCORE SCREEN -->
+        <div id="ScoreScreen" style="display:none">
+            FINAL SCORE
+            <div id="startButton">Start screen</div>
+        </div>
+        <!--  END SCORE SCREEN -->
+
     </body>
 </html>
