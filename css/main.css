@@ -35,6 +35,39 @@ html {
     font-size: 100px;
 }
 
+.title {
+    margin-top: 10%;
+    text-align: center;
+}
+
+.back {
+    text-align: center;
+    bottom: 5%;
+}
+
+.blueNum {
+    text-align: left;
+}
+
+.orangeNum {
+    text-align: right;
+}
+
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+    text-align:center;
+}
+
+td { 
+    padding: 10px;
+}
+
+table { 
+    border-spacing: 10px;
+    border-collapse: separate;
+}
+
 * { 
 	margin:0; padding:0; 
 	-webkit-box-sizing:border-box; box-sizing:border-box;
@@ -50,9 +83,18 @@ body {
 	width:100%;	height:100%;
     overflow:hidden;
     -webkit-user-select:none;
-    background-color: #F8F8F8;
+    background-color: #FFFAFA;
 }
 
+#fn {
+    font-size:36px;
+    font-family: 'Just Another Hand', cursive;
+}
+
+#smaller-fn {
+    font-size:30px;
+    font-family: 'Just Another Hand', cursive;
+}
 
 input,textarea
 {
@@ -73,10 +115,6 @@ a:focus, a:active, a:hover { outline:0; }
 
 
 /******************* SMARTPHONE [DEFAULT STYLES] **************************/
-#fn {
-    font-size:36px;
-    font-family: 'Just Another Hand', cursive;
-}
 
 .content {
     display:block;

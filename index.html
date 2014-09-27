@@ -54,15 +54,15 @@
     
         <!--  INSTRUCTIONS SCREEN -->
         <div id="InstructionsScreen" style="display:none">
-            <div id="fn">INSTRUCTIONS</div>
-            <a href="#" onclick="return show('StartScreen','InstructionsScreen');">BUTTON HERE</a>
+            <div id="fn" class="title">Instructions</div>
+            <a href="#" class="back" onclick="return show('StartScreen','InstructionsScreen');">Back</a>
         </div>
         <!-- END INSTRUCTIONS SCREEN -->
     
         <!--  SETTINGS SCREEN -->
         <div id="SettingsScreen" style="display:none">
-            <div id="fn">SETTINGS</div>
-            <a href="#" onclick="return show('StartScreen','SettingsScreen');">BUTTON HERE</a>
+            <div id="fn" class="title">Settings</div>
+            <a href="#" class="back" onclick="return show('StartScreen','SettingsScreen');">Back</a>
         </div>
         <!-- END SETTINGS SCREEN -->
     
@@ -81,7 +81,24 @@
     
         <!--  SCORE SCREEN -->
         <div id="ScoreScreen" style="display:none">
-            FINAL SCORE
+            <div id="fn" class="title">Final Score</div>
+            <table id="smaller-fn" class="center">
+              <tr>
+                <td id="blueGot" class="blueNum">4</td>
+                <td>Got</td>
+                <td id="orangeGot" class="orangeNum">6</td>
+              </tr>
+              <tr>
+                <td id="blueFailed" class="blueNum">8</td>
+                <td>Failed</td>
+                <td id="orangeFailed" class="orangeNum">9</td>
+              </tr>
+              <tr>
+                <td id="blueSkipped" class="blueNum">45</td>
+                <td>Skipped</td>
+                <td id="orangeSkipped" class="orangeNum">45</td>
+              </tr>
+            </table>
             <div id="startButton">Start screen</div>
         </div>
         <!--  END SCORE SCREEN -->
