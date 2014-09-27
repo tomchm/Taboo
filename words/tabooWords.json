@@ -1,4 +1,4 @@
-[{"GuessWord":"pirate","Fail1":"tresure","Fail2":"hook","Fail3":"parrot","Fail4":"skull","Fail5":"island"},
+["taboowords":{"GuessWord":"pirate","Fail1":"tresure","Fail2":"hook","Fail3":"parrot","Fail4":"skull","Fail5":"island"},
 {"GuessWord":"memory","Fail1":"remember","Fail2":"forget","Fail3":"brain","Fail4":"elephant","Fail5":"computer"},
 {"GuessWord":"blind","Fail1":"window","Fail2":"roof","Fail3":"light","Fail4":"decorate","Fail5":"attic"},
 {"GuessWord":"scenery","Fail1":"picture","Fail2":"art","Fail3":"nature","Fail4":"country","Fail5":"painting"},
