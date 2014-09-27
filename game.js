@@ -1,3 +1,9 @@
+/*jslint browser:true, devel:true, white:true, vars:true, eqeq:true */
+/*global $:false, intel:false*/
+/*
+ * This function runs once the page is loaded, but the JavaScript bridge library is not yet active.
+ */
+
 /***************************************************************
 * Author:      Kabir Singh
 * Date:        27 September 2014
@@ -31,7 +37,7 @@
         this.num_players = input_num;
         this.scores = [0, 0];
         this.round_time = 0;
-        this.wordlist;
+        //this.wordlist;
         /* index in word list currently being used */
         this.current_word = 0;
         this.current_round = 0;
@@ -39,12 +45,13 @@
         this.current_team = 0;
         /* create dialogue to see if user wants to use mic?*/
         this.using_mic = 0;
-        this.missed_words;
-        this.guessed_words;
+        //this.missed_words;
+        //this.guessed_words;
     }
 
     // based on num players dialog, create game manager if possible 
     function make_game_manager() {
+        alert("HEllo");
         //Get the number of players and create a game manager
         var num_players = document.getElementById("Number_players").value;
         var game_manager; 
@@ -73,7 +80,7 @@
     /* start! */
     function start_game(game_manager) {
         //clear the page
-        document.body.innerHTML = " ";
+        //document.body.innerHTML = " ";
         // run timer and display in body */
         run_timer(game_manager);
 
@@ -86,7 +93,14 @@
         /* run every 1000 milliseconds */
         var counter = setInterval(timer, 1000);
         /* formatting for "00:20?" */
-        document.body.innerHTML = game_manager.round_time;
+        var counterText = document.getElementById("counter");
+        counterText.innerHTML = game_manager.round_time;
+        
+        document.getElementById("fail1").innerHTML = game_manager.wordlist.words[0].guess;
+        document.getElementById("fail2").innerHTML = game_manager.wordlist.words[1].guess;
+        document.getElementById("fail3").innerHTML = game_manager.wordlist.words[2].guess;
+        document.getElementById("fail4").innerHTML = game_manager.wordlist.words[3].guess;
+        document.getElementById("fail5").innerHTML = game_manager.wordlist.words[4].guess;
 
         /* func. called every second */
         function timer() {
@@ -96,7 +110,7 @@
             } else {
                 game_manager.round_time--;
                 /* formatting */
-                document.body.innerHTML = game_manager.round_time;
+                counterText.innerHTML = game_manager.round_time;
                 /* i think this where you would do:
                  * start_speech_recognition(game_manager) */
             }
@@ -119,7 +133,7 @@
         }
     }
     /* number check function*/
-    function isNumber(obj) { return !isNaN(parseFloat(obj)) }
+    function isNumber(obj) { return !isNaN(parseFloat(obj)); }
     /* print the contents of game manager */
     function print_game_info(game_manager) {
         document.body.innerHTML = "num_players: " + game_manager.num_players + "\n scores: " + game_manager.scores[0] + " - " + game_manager.scores[1] + "\n round time: " + game_manager.round_time + "\n current word: " + game_manager.current_word + "\n current round: " + game_manager.current_round;

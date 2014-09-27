@@ -40,14 +40,14 @@
         <div id="StartScreen">
 	<img id="logo" src="assets\taboo_logo.svg" alt="Our awesome logo">
             
-	<div id="fn">Enter number of players: <input type="text" value="4"><br></div>
-            <div id="Start" onclick="return show('GameScreen','StartScreen');">
+	<div id="fn">Enter number of players: <input type="text" value="4" id="Number_players"><br></div>
+            <div id="Start" onclick="return show('GameScreen','StartScreen'); ">
                 <div id="fn">Start</div>
             </div>
             <div id="InstructionsButton" onclick="return show('InstructionsScreen','StartScreen');">
                 <div id="fn">Instructions</div>
             </div>
-            <div id="SettingsButton" onclick="return show('SettingsScreen','StartScreen');">
+            <div id="SettingsButton" onclick="return show('SettingsScreen','StartScreen') || make_game_manager();">
                 <div id="fn">Settings</div>
             </div>
         </div>
@@ -76,33 +76,32 @@
         <!--  GAME SCREEN -->
         <div id="GameScreen" style="display:none">
             <div id="topBar">
-		<div id="team1">
-		Team 1
-		</div>
-		<div id="counter">
-		Counter
-		</div>
-		<div id="team2">
-		Team 2
-		</div>
-	    </div>
-	    <div id="wordTable">
-		<table>
-		    <th id="currentWord">Grass</th>
-		    <tr><td>Green</td></tr> 
-		    <tr><td>Ground</td></tr> 
-		    <tr><td>Plant</td></tr> 
-		    <tr><td>Food</td></tr> 
-		    <tr><td>Cows</td></tr>
-		</table>
-	    </div>
-	    <div id="bottomBar">
-		<div id="wrongButton"></div>
-		<div id="checkButton"></div>
-		<div id="skipButton"></div>
-	    </div>
-
-            <a href="#" onclick="return show('ScoreScreen','GameScreen');">Game end?</a>
+                <div id="team1">
+                Team 1
+                </div>
+                <div id="counter">
+                Counter
+                </div>
+                <div id="team2">
+                Team 2
+                </div>
+            </div>
+            <div id="wordTable">
+            <table>
+                <th id="currentWord">Grass</th>
+                <tr><td id="fail1">Green</td></tr> 
+                <tr><td id="fail2">Ground</td></tr> 
+                <tr><td id="fail3">Plant</td></tr> 
+                <tr><td id="fail4">Food</td></tr> 
+                <tr><td id="fail5">Cows</td></tr>
+            </table>
+            </div>
+            <div id="bottomBar">
+                <div id="wrongButton"></div>
+                <div id="checkButton"></div>
+                <div id="skipButton"></div>
+            </div>
+<a href="#" onclick="return show('ScoreScreen','GameScreen');">Game end?</a>
         </div>
         <!-- END GAME SCREEN -->
     
