@@ -19,6 +19,7 @@
         <meta http-equiv="Content-type" content="text/html; charset=utf-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
         <link href="css/main.css" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
         <script src="intelxdk.js"></script>
   <script src='cordova.js'></script> 
   <script src='xhr.js'></script>
@@ -30,18 +31,22 @@
         
       <div id="StartScreen">
         ** Taboo icon ** <br></br>
-        Enter number of players: TEXTBOX
+        <div id="fn">Enter number of players: <input type="text" value="4"><br></div>
+        
+        <div id="InstructionsButton"><div id="fn">Instructions</div></div>
+        <div id="Start"><div id="fn">Start</div></div>
+        
         <a href="#" onclick="return show('InstructionsScreen','StartScreen');">INSTRUCTIONS</a>
         <a href="#" onclick="return show('ReadyScreen','StartScreen');">START</a>
       </div>
     
         <div id="InstructionsScreen" style="display:none">
-        INSTRUCTIONS
+        <div id="fn">INSTRUCTIONS</div>
         <a href="#" onclick="return show('StartScreen','InstructionsScreen');">BUTTON HERE</a>
       </div>
 
       <div id="ReadyScreen" style="display:none">
-          3 2 1
+          <div id="fn">3 2 1</div>
         <a href="#" onclick="return show('GameScreen','ReadyScreen');">BUTTON HERE</a>
       </div>
 
