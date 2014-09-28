@@ -5,11 +5,7 @@
  */
 
 // link to this from the game.js file
-function show(shown, hidden) {
-  document.getElementById(shown).style.display='block';
-  document.getElementById(hidden).style.display='none';
-  return false;
-}
+
 
 var currentCount = 3, myTimer;
 var countDown = function() {
