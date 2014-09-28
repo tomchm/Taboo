@@ -40,12 +40,12 @@
         <div id="StartScreen">
 	<img id="logo" src="assets\taboo_logo.svg" alt="Our awesome logo">
             
-	<div id="fn">Enter number of players: <br><input type="text" value="4" id="Number_players"><br></div>
-            <div id="Start" onclick="return startGame() || show('GameScreen','StartScreen', 0);"><br>
+	<div id="fn">Enter number of players:<br><input type="text" value="4" id="Number_players"><br></div>
+            <div id="Start" onclick="return startGame() || show('GameScreen','StartScreen', 0);"><br><br>
                 <div id="fn"><div id="startyb">Start</div></div>
-            </div>
+            </div><br>
             <div id="InstructionsButton" onclick="return show('InstructionsScreen','StartScreen', 0);">
-                <div id="fn">Instructions</div>
+                <div id="fn"><u>Instructions</u></div>
             </div>
         </div>
         <!-- END START SCREEN -->
@@ -74,11 +74,9 @@
         <div id="GameScreen" style="display:none">
             <div id="topBar">
                 <div id="team1">
-                Team 1
                 </div>
                 <div id="counter">Counter</div>
                 <div id="team2">
-                Team 2
                 </div>
             </div>
             <div id="wordTable">
@@ -95,7 +93,6 @@
         		<img id="check-button" src="assets\check-button.svg" onclick="addGet();" alt="Correct!">
         		<img id="pass-button" src="assets\pass-button.svg" onclick="addSkip();" alt="Fuck this.">
             </div>
-<a href="#" onclick="return show('ScoreScreen','GameScreen', 0);">Game end?</a>
         </div>
         <!-- END GAME SCREEN -->
     
