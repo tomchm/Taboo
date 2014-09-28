@@ -119,6 +119,36 @@ th, #currentWord {
     text-align: center;
 }
 
+#team1 {
+    position: absolute;
+    top: 3%;
+    left: 15%;
+    
+    font-size:24px;
+    font-family: 'Gloria Hallelujah', cursive;
+    
+}
+
+#team2 {
+    position: absolute;
+    top: 3%;
+    left: 85%;
+    
+    font-size:24px;
+    font-family: 'Gloria Hallelujah', cursive;
+    
+}
+
+#counter {
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    
+    font-size:24px;
+    font-family: 'Gloria Hallelujah', cursive;
+    
+}
+
 #check-button {
  width: 43%;
     display: inline-block;

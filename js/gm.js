@@ -75,6 +75,10 @@ function startRound() {
 
 function nextCard() {
     currentCard += 1;
+    
+    document.getElementById("team1").innerHTML = blueGet - blueFail - blueSkip;
+    document.getElementById("team2").innerHTML = orangeGet - orangeFail - orangeSkip;
+    
     var request = new XMLHttpRequest();
     request.open("GET", "words/tabooWords.json", false);
     request.send(null);
