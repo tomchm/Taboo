@@ -145,7 +145,7 @@ th, #currentWord {
     margin-left:-25px;
     
     width: 50px;
-    background-color: #FFA500;
+    background-color: #71D1FF;
     border-radius: 23px; 
     -moz-border-radius: 23px; 
     -webkit-border-radius: 23px;  
@@ -164,7 +164,7 @@ th, #currentWord {
     font-family: 'Gloria Hallelujah', cursive;
     margin-left:-25px;
     width: 50px;
-    background-color: #71D1FF;
+    background-color: #FFA500;
     border-radius: 23px; 
     -moz-border-radius: 23px; 
     -webkit-border-radius: 23px;  
@@ -276,6 +276,36 @@ body {
     overflow:hidden;
     -webkit-user-select:none;
     
+}
+
+.blueWinner {
+ 
+    box-shadow: 2px 2px 2px rgba(0,0,0,1);
+   
+    background-color: #71D1FF;
+}
+
+.orangeWinner {
+
+    box-shadow: 2px 2px 2px rgba(0,0,0,1);
+      
+    background-color: #FFA500;
+}
+
+.tieWinner { 
+    box-shadow: 2px 2px 2px rgba(0,0,0,1);
+    
+    background-color: #F2F3F4;   
+}
+
+#Winner {
+    width: 100%;  
+    font-size:36px;
+    font-family: 'Gloria Hallelujah', cursive;
+    padding: 5px;
+    margin-left:auto; 
+    margin-right:auto;
+    text-align: center;
 }
 
 .normalBack {

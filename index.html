@@ -45,7 +45,7 @@
             <div id="Start" onclick="return startGame() || show('GameScreen','StartScreen', 0);"><br><br>
                 <div id="fn"><div id="startyb">Start</div></div>
             </div><br>
-            <div id="InstructionsButton" onclick="return show('ScoreScreen','StartScreen', 0);">
+            <div id="InstructionsButton" onclick="return show('InstructionsScreen','StartScreen', 0);">
                 <div id="fn"><u>Instructions</u></div>
             </div>
         </div>
@@ -108,17 +108,17 @@
             <table class="center" id="sstable">
               <tr>
                 <td id="blueGot" class="blueNum">4</td>
-                <td class="ssText">Got</td>
+                <td class="ssText">Success</td>
                 <td id="orangeGot" class="orangeNum">6</td>
               </tr>
               <tr>
                 <td id="blueFailed" class="blueNum">8</td>
-                <td class="ssText">Failed</td>
+                <td class="ssText">Fail</td>
                 <td id="orangeFailed" class="orangeNum">9</td>
               </tr>
               <tr>
                 <td id="blueSkipped" class="blueNum">45</td>
-                <td class="ssText">Skipped</td>
+                <td class="ssText">Skip</td>
                 <td id="orangeSkipped" class="orangeNum">45</td>
               </tr>
               <tr>
@@ -129,7 +129,7 @@
             </table>
             <div id="Winner">You win!</div>
             <br>
-            <div id="fn" onclick="return show('StartScreen','ScoreScreen', 0);">
+            <div id="fn" onclick="return show('StartScreen','ScoreScreen', 0) || restart();">
                 <div id="startyb">Play again?</div>
             </div>
         </div>

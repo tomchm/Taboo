@@ -24,6 +24,21 @@ var orangeFail = 0;
 var blueSkip = 0;
 var orangeSkip = 0;
 
+function restart() {
+    totalPlayers = 0;
+    currentRound = 0;
+    currentCard = 0;
+    currentTime = 0;
+
+    blueGet = 0;
+    orangeGet = 0;
+    blueFail = 0;
+    orangeFail = 0;
+    blueSkip = 0;
+    orangeSkip = 0;   
+}
+
+
 function show(shown, hidden) {
   document.getElementById(shown).style.display='block';
   document.getElementById(hidden).style.display='none';
@@ -50,14 +65,23 @@ function endGame() {
     document.getElementById("orangeTotal").innerHTML = ot;
     
     if(bt > ot){
-           
+        document.getElementById("Winner").innerHTML = "Blue Team wins!";
+        document.getElementById("Winner").className = "blueWinner";
+    }
+    else if(ot > bt){
+        document.getElementById("Winner").innerHTML = "Orange Team wins!";
+        document.getElementById("Winner").className = "orangeWinner";
+    }
+    else {
+        document.getElementById("Winner").innerHTML = "It's a tie!";
+        document.getElementById("Winner").className = "tieWinner";
     }
 }
 
 function startRound() {
     currentRound += 1;
     
-    if(getCurrentTeam() == 1){
+    if(getCurrentTeam() == 0){
         document.getElementById("body").className = "blueBack"; 
         document.getElementById("currentWord").className = "orangeBar";  
     }
@@ -68,7 +92,7 @@ function startRound() {
     
     
     nextCard();
-    currentTime = 2;
+    currentTime = 20;
     document.getElementById("counter").innerHTML = currentTime;
     myCountdown = setInterval(myTimer, 1000);
     
@@ -197,7 +221,7 @@ var start_timestamp;
           for (var i = event.resultIndex; i < event.results.length; ++i) {
       if (!event.results[i].isFinal) {
         interim_transcript += event.results[i][0].transcript + "<br>";
-        alert(event.results[i][0].transcript.trim()+"\nhello");
+        //alert(event.results[i][0].transcript.trim()+"\nhello");
         if(event.results[i][0].transcript.trim() == "ready") {
             return startRound() || show('GameScreen','PauseScreen', 0);
         }
