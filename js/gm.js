@@ -31,7 +31,7 @@ function show(shown, hidden) {
 }
 
 function startGame() {
-    startButton();
+    //startButton();
     totalPlayers = document.getElementById("Number_players").value;
     startRound();
     return false;
@@ -44,13 +44,31 @@ function endGame() {
     document.getElementById("orangeFailed").innerHTML = orangeFail;
     document.getElementById("blueSkipped").innerHTML = blueSkip;
     document.getElementById("orangeSkipped").innerHTML = orangeSkip;
+    var bt = blueGet - blueFail - blueSkip;
+    var ot = orangeGet - orangeFail - orangeSkip;
+    document.getElementById("blueTotal").innerHTML = bt;
+    document.getElementById("orangeTotal").innerHTML = ot;
+    
+    if(bt > ot){
+           
+    }
 }
 
 function startRound() {
     currentRound += 1;
     
+    if(getCurrentTeam() == 1){
+        document.getElementById("body").className = "blueBack"; 
+        document.getElementById("currentWord").className = "orangeBar";  
+    }
+    else {
+        document.getElementById("body").className = "orangeBack";
+        document.getElementById("currentWord").className = "blueBar";  
+    }
+    
+    
     nextCard();
-    currentTime = 10;
+    currentTime = 2;
     document.getElementById("counter").innerHTML = currentTime;
     myCountdown = setInterval(myTimer, 1000);
     
@@ -62,9 +80,11 @@ function startRound() {
             clearInterval(myCountdown);
             if(currentRound == totalPlayers){
                 endGame();
+                document.getElementById("body").className = "normalBack";
                 show("ScoreScreen", "GameScreen", 0);
             }
             else {
+                document.getElementById("body").className = "normalBack";
                 show("PauseScreen", "GameScreen", 0);
             }
         }
@@ -172,8 +192,17 @@ var start_timestamp;
 
   recognition.onresult = function(event) {
     var interim_transcript = '';
+      
       if(currentTime == 0){
-          return false;
+          for (var i = event.resultIndex; i < event.results.length; ++i) {
+      if (!event.results[i].isFinal) {
+        interim_transcript += event.results[i][0].transcript + "<br>";
+        alert(event.results[i][0].transcript.trim()+"\nhello");
+        if(event.results[i][0].transcript.trim() == "ready") {
+            return startRound() || show('GameScreen','PauseScreen', 0);
+        }
+      }
+    }
       }
       
     for (var i = event.resultIndex; i < event.results.length; ++i) {
@@ -210,4 +239,5 @@ function startButton() {
   final_transcript = '';
   recognition.start();
   ignore_onend = false;
+    return false;
 }

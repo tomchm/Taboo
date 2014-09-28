@@ -21,6 +21,7 @@
         
         <!-- CSS -->
         <link href="css/main.css" rel="stylesheet" type="text/css">
+        <link href="css/pause.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/odometer.css" />
         <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
         
@@ -34,7 +35,7 @@
         
     </head>
     
-    <body>
+    <body id="body" onload="return startButton();" class="normalBack">
         
         <!-- START SCREEN -->
         <div id="StartScreen">
@@ -44,7 +45,7 @@
             <div id="Start" onclick="return startGame() || show('GameScreen','StartScreen', 0);"><br><br>
                 <div id="fn"><div id="startyb">Start</div></div>
             </div><br>
-            <div id="InstructionsButton" onclick="return show('InstructionsScreen','StartScreen', 0);">
+            <div id="InstructionsButton" onclick="return show('ScoreScreen','StartScreen', 0);">
                 <div id="fn"><u>Instructions</u></div>
             </div>
         </div>
@@ -64,10 +65,17 @@
         </div>
         <!-- END SETTINGS SCREEN -->
     
-        <!--  READY SCREEN -->
+                <!--  READY SCREEN -->
         <div id="PauseScreen" style="display:none">
-          <div id="readyButton" class="readyButton" onclick="return startRound() || show('GameScreen','PauseScreen', 0);">I'm Ready</div>
-        </div>
+          <div id="pause-text">
+           <div id="bigger-fn"> Time's up! </div>
+           <div id="makeSpace1"></div>
+	       <div id="fn"> Pass the device to someone on the other team! </div>
+          </div>
+          <div id="makeSpace2">
+          </div>
+               <div id="readyButton" class="readyButton" onclick="return startRound() || show('GameScreen','PauseScreen', 0);">Ready?</div>
+            </div>
         <!-- END READY SCREEN -->
     
         <!--  GAME SCREEN -->
@@ -96,26 +104,33 @@
     
         <!--  SCORE SCREEN -->
         <div id="ScoreScreen" style="display:none">
-            <div id="fn" class="title">Final Score</div>
-            <table id="smaller-fn" class="center">
+            <div class="title">Final Score</div>
+            <table class="center" id="sstable">
               <tr>
                 <td id="blueGot" class="blueNum">4</td>
-                <td>Got</td>
+                <td class="ssText">Got</td>
                 <td id="orangeGot" class="orangeNum">6</td>
               </tr>
               <tr>
                 <td id="blueFailed" class="blueNum">8</td>
-                <td>Failed</td>
+                <td class="ssText">Failed</td>
                 <td id="orangeFailed" class="orangeNum">9</td>
               </tr>
               <tr>
                 <td id="blueSkipped" class="blueNum">45</td>
-                <td>Skipped</td>
+                <td class="ssText">Skipped</td>
                 <td id="orangeSkipped" class="orangeNum">45</td>
               </tr>
+              <tr>
+                <td id="blueTotal" class="blueNum">45</td>
+                <td class="ssText">Total</td>
+                <td id="orangeTotal" class="orangeNum">45</td>
+              </tr>
             </table>
-            <div id="RestartButton" onclick="return show('StartScreen','ScoreScreen', 0);">
-                <div id="fn">Play again?</div>
+            <div id="Winner">You win!</div>
+            <br>
+            <div id="fn" onclick="return show('StartScreen','ScoreScreen', 0);">
+                <div id="startyb">Play again?</div>
             </div>
         </div>
         <!--  END SCORE SCREEN -->
